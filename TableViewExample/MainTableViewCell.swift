@@ -13,7 +13,12 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet var playerName : UILabel!
     @IBOutlet var playerAge : UILabel!
     @IBOutlet var playerPos : UILabel!
-    @IBOutlet var playerImage : UIImageView!
+    @IBOutlet var playerImage : UIImageView!{
+        didSet {
+             playerImage.layer.cornerRadius = playerImage.bounds.width / 2
+             playerImage.clipsToBounds = true
+        }
+    }
     
 
     override func awakeFromNib() {

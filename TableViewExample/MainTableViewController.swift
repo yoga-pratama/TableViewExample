@@ -66,6 +66,20 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let cell = tableView.cellForRow(at: indexPath)
+        
+        if cell?.accessoryType == .checkmark {
+            cell?.accessoryType = .none
+        }else{
+            cell?.accessoryType = .checkmark
+            
+        }
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
