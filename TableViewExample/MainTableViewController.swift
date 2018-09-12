@@ -93,6 +93,11 @@ class MainTableViewController: UITableViewController {
             
         }
         
+        //customize icon
+        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+        deleteAction.image = UIImage(named: "delete")
+        
+        
         
         //share image
         let shareAction = UIContextualAction(style: .normal, title: "Share"){
@@ -113,6 +118,10 @@ class MainTableViewController: UITableViewController {
             self.present(activityController, animated:  true , completion:  nil)
             completionHandler(true)
         }
+        
+        // customize icon
+        shareAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        shareAction.image = UIImage(named: "share")
         
         let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction , shareAction])
         return swipeConfig
